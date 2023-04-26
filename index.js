@@ -1,6 +1,8 @@
 const gameContainer = document.getElementById("game-container");
 const character = document.getElementById("character");
 const playButton = document.getElementById("play-button");
+const playAgainButton = document.getElementById("play-again-button");
+const gameOver = document.getElementById("game-over-overlay");
 
 let isJumping = false;
 let obstaclesInterval;
@@ -93,7 +95,9 @@ function launchGame() {
       playerBounding.bottom >= obstacleBounding.top
     ) {
       clearInterval(obstaclesInterval);
-      alert("Game Over");
+
+      playButton.style.display = "none";
+      playAgainButton.style.display = "block";
     } else if (obstacleBounding.right < playerBounding.left && !obs.scored) {
       obs.scored = true;
       document.getElementById("score").innerText = `Score: ${++score}`;
@@ -123,3 +127,21 @@ document.addEventListener("keydown", (e) => {
 });
 
 playButton.addEventListener("click", handlePlayButtonClick);
+
+playAgainButton.addEventListener("click", () => {
+  isJumping = false;
+  obstaclesInterval = null;
+  score = 0;
+  obstacles = [];
+  frames = 0;
+
+  character.style.bottom = "0";
+
+  const allObstacles = document.querySelectorAll(".obstacle");
+  allObstacles.forEach((obstacle) => {
+    obstacle.remove();
+  });
+
+  playAgainButton.style.display = "none";
+  playButton.style.display = "block";
+});
