@@ -51,7 +51,7 @@ function createObstacle() {
     ) {
       clearInterval(moveObstacle);
       clearInterval(obstaclesInterval);
-      alert("Game Over");
+      // alert("Game Over");
     } else if (obstaclePosition <= -50) {
       clearInterval(moveObstacle);
       gameContainer.removeChild(obstacleElem);
