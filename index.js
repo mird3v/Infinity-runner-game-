@@ -55,7 +55,7 @@ function createObstacle() {
     } else if (obstaclePosition <= -50) {
       clearInterval(moveObstacle);
       gameContainer.removeChild(obstacleElem);
-      document.getElementById("score").innerText = `Score: ${++score}`;
+      document.getElementById("score").innerText = `Score: ${score++}`;
     } else {
       obstacleElem.style.right = `${obstaclePosition + 10}px`;
     }
@@ -97,7 +97,9 @@ function launchGame() {
       playerBounding.bottom >= obstacleBounding.top
     ) {
       clearInterval(obstaclesInterval);
-      console.log("============");
+      score = 0;
+      document.getElementById("score").innerText = `Score: ${score++}`;
+
       playButton.style.display = "none";
       playAgainButton.style.display = "block";
     } else if (obstacleBounding.right < playerBounding.left && !obs.scored) {
