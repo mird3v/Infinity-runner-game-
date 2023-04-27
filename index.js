@@ -9,6 +9,7 @@ let obstaclesInterval;
 let score = 0;
 let obstacles = [];
 let frames = 0;
+let obstacleSpeed = 1;
 
 function jump() {
   if (isJumping) return;
@@ -105,6 +106,9 @@ function launchGame() {
     } else if (obstacleBounding.right < playerBounding.left && !obs.scored) {
       obs.scored = true;
       document.getElementById("score").innerText = `Score: ${++score}`;
+      if (score >= 2) {
+        obstacleSpeed += 100;
+      }
     } else if (obstaclePosition <= -50) {
       obs.remove();
       obstacles.splice(obstacles.indexOf(obs), 1);
@@ -116,7 +120,7 @@ function launchGame() {
 
 function startGame() {
   console.log("2 start function");
-  //obstaclesInterval = setInterval(createObstacle, 2000);
+  // obstaclesInterval = setInterval(createObstacle, 2000);
   obstaclesInterval = setInterval(launchGame, 1000 / 60);
 }
 
