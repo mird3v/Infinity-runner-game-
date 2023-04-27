@@ -30,9 +30,10 @@ html {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 70px;
-  height: 70px;
-  background-color: navy;
+  width: 100px;
+  height: 100px;
+  background-image: url("PngItem_847790.png");
+  background-size: contain;
 }
 
 .score {
@@ -40,17 +41,21 @@ html {
   top: 20px;
   left: 20px;
   font-size: 24px;
+  color: white;
 }
 
 .play-button {
   background-color: rgb(212, 113, 14);
   border: none;
   color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: large;
+  font-weight: 700;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 24px 36px;
+  padding: 18px 24px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -79,10 +84,13 @@ html {
   background-color: rgb(212, 113, 14);
   border: none;
   color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: large;
+  font-weight: 700;
   padding: 24px 36px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  display: none;
   font-size: 16px;
   cursor: pointer;
   border-radius: 8px;

@@ -75,6 +75,8 @@ function detectCollision(player, obstacle) {
 }
 
 function launchGame() {
+  console.log("3 launch function");
+
   frames++;
   if (frames % 120 === 0) {
     const obstacleElem = document.createElement("div");
@@ -95,7 +97,7 @@ function launchGame() {
       playerBounding.bottom >= obstacleBounding.top
     ) {
       clearInterval(obstaclesInterval);
-
+      console.log("============");
       playButton.style.display = "none";
       playAgainButton.style.display = "block";
     } else if (obstacleBounding.right < playerBounding.left && !obs.scored) {
@@ -111,11 +113,13 @@ function launchGame() {
 }
 
 function startGame() {
+  console.log("2 start function");
   //obstaclesInterval = setInterval(createObstacle, 2000);
   obstaclesInterval = setInterval(launchGame, 1000 / 60);
 }
 
 function handlePlayButtonClick() {
+  console.log("1 handle function");
   playButton.style.display = "none";
   startGame();
 }
