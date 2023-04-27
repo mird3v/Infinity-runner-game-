@@ -9,7 +9,7 @@ let obstaclesInterval;
 let score = 0;
 let obstacles = [];
 let frames = 0;
-let obstacleSpeed = 1;
+let obstacleSpeed = 100;
 
 function jump() {
   if (isJumping) return;
@@ -58,7 +58,7 @@ function createObstacle() {
       gameContainer.removeChild(obstacleElem);
       document.getElementById("score").innerText = `Score: ${score++}`;
     } else {
-      obstacleElem.style.right = `${obstaclePosition + 10}px`;
+      obstacleElem.style.right = `${obstaclePosition + obstacleSpeedpx}`;
     }
   }, 100);
 }
@@ -107,7 +107,8 @@ function launchGame() {
       obs.scored = true;
       document.getElementById("score").innerText = `Score: ${++score}`;
       if (score >= 2) {
-        obstacleSpeed += 100;
+        clearInterval(obstaclesInterval);
+        obstaclesInterval = setInterval(launchGame, 1000 / (60 * 2)); //  FASTER MOVEMENTS
       }
     } else if (obstaclePosition <= -50) {
       obs.remove();
@@ -120,10 +121,14 @@ function launchGame() {
 
 function startGame() {
   console.log("2 start function");
+  //obstaclesInterval = setInterval(createObstacle, 2000);
   // obstaclesInterval = setInterval(createObstacle, 2000);
   obstaclesInterval = setInterval(launchGame, 1000 / 60);
+  if (score >= 2) {
+    clearInterval(obstaclesInterval);
+    obstaclesInterval = setInterval(launchGame, 1000 / (60 * 2));
+  }
 }
-
 function handlePlayButtonClick() {
   console.log("1 handle function");
   playButton.style.display = "none";
