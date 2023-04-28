@@ -108,7 +108,7 @@ function launchGame() {
       document.getElementById("score").innerText = `Score: ${++score}`;
       if (score >= 2) {
         clearInterval(obstaclesInterval);
-        obstaclesInterval = setInterval(launchGame, 1000 / (60 * 2)); //  FASTER MOVEMENTS
+        obstaclesInterval = setInterval(launchGame, 1000 / (60 * 2));
       }
     } else if (obstaclePosition <= -50) {
       obs.remove();
@@ -121,8 +121,7 @@ function launchGame() {
 
 function startGame() {
   console.log("2 start function");
-  //obstaclesInterval = setInterval(createObstacle, 2000);
-  // obstaclesInterval = setInterval(createObstacle, 2000);
+  //obstaclesInterval = setInterval(createObstacle, 2000);;
   obstaclesInterval = setInterval(launchGame, 1000 / 60);
   if (score >= 2) {
     clearInterval(obstaclesInterval);

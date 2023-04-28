@@ -10,25 +10,22 @@ A modern web browser, such as Google Chrome, Mozilla Firefox, or Microsoft Edge.
 
 # Installation and Setup
 
-Download or clone the source files for the game.
-Open the index.html file in your web browser.
+To get started with Infinity Runner, follow these steps:
+
+Download or clone the source files for the game from the repository link.
+Extract the downloaded files to a directory on your computer.
+Open the index.html file in your preferred web browser.
 
 # How to Play
 
-Press the spacebar to make the character jump.
-Avoid obstacles by jumping over them.
-Collect items to gain points.
-Try to achieve the highest score possible.
-Features
-Automatic running character
-Obstacles and items moving at different speeds
-Simple jump mechanic
+Playing Infinity Runner is easy and straightforward. Follow these instructions:
 
-# Future Improvements
+Use the spacebar on your keyboard to make the character jump.
+Your objective is to avoid obstacles to increase your score.
+The game ends if you collide with an obstacle.
+Aim for the highest score and challenge yourself to beat it in subsequent plays.
 
-Implement a scoring system
-Add different types of obstacles and items
-Increase difficulty over time
-Add animations and visual effects
-Create a start and end screen with instructions, high scores, and restart options
-Make the game responsive and playable on different devices
+# Features
+
+Responsive controls: Use the spacebar to control the character's jumps with precision.
+Score tracking: Keep track of your score and aim to improve it with each playthrough.

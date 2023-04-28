@@ -22,7 +22,7 @@ html {
   left: 200px;
   width: 200px;
   height: 200px;
-  background-image: url("goku.gif");
+  background-image: url("goku\ .gif");
   background-size: cover;
 }
 
